@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2016 at 06:16 PM
--- Server version: 5.7.9
--- PHP Version: 5.6.15
+-- Generation Time: Sep 16, 2016 at 12:39 AM
+-- Server version: 5.5.39
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `internalmarks`
@@ -26,11 +26,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `id` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
+  `password` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -46,13 +44,11 @@ INSERT INTO `admin` (`id`, `password`) VALUES
 -- Table structure for table `regdfaculty`
 --
 
-DROP TABLE IF EXISTS `regdfaculty`;
 CREATE TABLE IF NOT EXISTS `regdfaculty` (
   `id` varchar(20) NOT NULL,
   `name` varchar(30) NOT NULL,
   `dept` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
+  `password` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -61,7 +57,8 @@ CREATE TABLE IF NOT EXISTS `regdfaculty` (
 
 INSERT INTO `regdfaculty` (`id`, `name`, `dept`, `password`) VALUES
 ('1234567', 'rwretwet', 'ECE', 'abc'),
-('13331A1223', 'kfjlsd', 'IT', 'abc');
+('13331A1223', 'kfjlsd', 'IT', 'abc'),
+('1234', 'srinivas rao', 'IT', '1234');
 
 -- --------------------------------------------------------
 
@@ -69,14 +66,12 @@ INSERT INTO `regdfaculty` (`id`, `name`, `dept`, `password`) VALUES
 -- Table structure for table `regdusers`
 --
 
-DROP TABLE IF EXISTS `regdusers`;
 CREATE TABLE IF NOT EXISTS `regdusers` (
   `id` varchar(20) NOT NULL,
   `name` varchar(30) NOT NULL,
   `dept` varchar(10) NOT NULL,
   `year` int(10) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
+  `password` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -87,6 +82,48 @@ INSERT INTO `regdusers` (`id`, `name`, `dept`, `year`, `password`) VALUES
 ('133ksdlkfa', 'dfkajsdf', 'CSE', 1, 'abc'),
 ('13331A1223', 'Murali Krishna', 'CSE', 1, 'abc'),
 ('13331A1214', 'laila', 'IT', 4, 'laila');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `results`
+--
+
+CREATE TABLE IF NOT EXISTS `results` (
+  `id` int(30) NOT NULL,
+  `subject` varchar(30) NOT NULL,
+  `internal marks` int(10) NOT NULL,
+  `year` int(20) NOT NULL,
+  `sem` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `regdfaculty`
+--
+ALTER TABLE `regdfaculty`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `regdusers`
+--
+ALTER TABLE `regdusers`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `results`
+--
+ALTER TABLE `results`
+ ADD PRIMARY KEY (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
