@@ -52,8 +52,9 @@ if(!isset($check))
               <h3 class="masthead-brand">MVGR</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">View Results</a></li>
-                  <li><a href="#">Update Results database</a></li>
+				<li class="active"><a href="hello.php">HOME</a></li>
+                  <li class="active"><a href="">View Results</a></li>
+                  <li><a href="resultupdate.php">Update Results database</a></li>
                   <li><a href="logout.php">Logout</a></li>
                 </ul>
               </nav>

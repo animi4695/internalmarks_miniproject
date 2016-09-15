@@ -52,7 +52,7 @@ if(!isset($check))
               <h3 class="masthead-brand">MVGR</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Counselling Students Results</a></li>
+                   <li class="active"><a href="viewresults.php">Counselling Students Results</a></li>
                   <li><a href="#">Edit your details</a></li>
                   <li><a href="logout.php">Logout</a></li>
                 </ul>
